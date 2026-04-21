@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
+  variable: "--font-geist-sans text-lg",
   subsets: ["latin"],
 });
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://quicktech.vercel.app',
-    siteName: 'QuickTech AI',
+    siteName: 'QuickTech AI - YouTube',
     images: [
       {
         url: 'https://quicktech.vercel.app/og-image.png',

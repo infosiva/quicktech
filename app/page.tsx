@@ -58,7 +58,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
-      </main>
+      <p>We appreciate your support! For sponsorship opportunities, please contact us at <a href='mailto:support@quicktech.ai'>support@quicktech.ai</a>.</p></main>
     </div>
   );
 }
