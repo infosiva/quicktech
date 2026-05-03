@@ -43,6 +43,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        {/* Adsterra — instant approval, no AdSense needed */}
+        <Script
+          src="https://epnzryrk.com/act/files/tag.min.js"
+          strategy="lazyOnload"
+          data-cfasync="false"
+        />
         <Script
           src="http://31.97.56.148:3098/t.js"
           data-site="quicktechai.app"

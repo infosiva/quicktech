@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AdUnit from "@/components/AdUnit";
 
 export default function Home() {
   return (
@@ -58,7 +59,12 @@ export default function Home() {
             Documentation
           </a>
         </div>
-      <p>We appreciate your support! For sponsorship opportunities, please contact us at <a href='mailto:support@quicktech.ai'>support@quicktech.ai</a>.</p></main>
+      <p>We appreciate your support! For sponsorship opportunities, please contact us at <a href='mailto:support@quicktech.ai'>support@quicktech.ai</a>.</p>
+      {/* Ad unit — below content */}
+      <div className="w-full flex justify-center mt-8">
+        <AdUnit size="rectangle" />
+      </div>
+      </main>
     </div>
   );
 }
