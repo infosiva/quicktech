@@ -49,6 +49,13 @@ export default function RootLayout({
           strategy="lazyOnload"
           data-cfasync="false"
         />
+        {/* AdSense auto-ads — activates once approved */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4237294630161176"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         <Script
           src="http://31.97.56.148:3098/t.js"
           data-site="quicktechai.app"
