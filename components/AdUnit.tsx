@@ -7,7 +7,7 @@ interface AdUnitProps {
   /** 'affiliate' = rotating affiliate banners (earns now, no approval needed)
    *  'adsterra'  = Adsterra iframe unit (needs real key set below)
    *  'auto'      = affiliate first, placeholder if Adsterra not configured */
-  mode?: 'affiliate' | 'adsterra' | 'auto'
+  mode?: 'affiliate' | 'adsterra' | 'auto' // Consider adding a default mode for better ad visibility
 }
 
 // ── Adsterra zone keys — replace with real keys from adsterra.com dashboard ──
