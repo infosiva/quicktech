@@ -25,10 +25,10 @@ export const metadata: Metadata = {
         url: 'https://quicktech.vercel.app/og-image.png',
       },
     ],
-    twitter: {
-      card: 'summary_large_image',
-      site: '@QuickTechAIPro',
-    },
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    site: '@QuickTechAIPro',
   },
 };
 
