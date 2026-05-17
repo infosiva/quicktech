@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import AnimatedHeroGuide from "@/components/AnimatedHeroGuide";
 
 const TIPS = [
   { id: 1, title: "ChatGPT voice mode tricks nobody uses", tag: "AI", duration: "28s", views: "142K", emoji: "🎙️", color: "#8b5cf6", url: "https://youtube.com/@QuickTechAIOfficial" },
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <div style={{minHeight:"100vh",background:"#0a0a14"}}>
+      <AnimatedHeroGuide />
       <nav style={{position:"sticky",top:0,zIndex:50,background:"rgba(10,10,20,0.92)",backdropFilter:"blur(16px)",borderBottom:"1px solid rgba(139,92,246,0.12)",padding:"0 24px",height:56,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <span style={{fontWeight:800,fontSize:16,color:"#f0f0ff",letterSpacing:"-0.02em"}}>⚡ QuickTech<span style={{color:"#8b5cf6"}}>AI</span></span>
         <a href="https://youtube.com/@QuickTechAIOfficial" target="_blank" rel="noopener noreferrer" style={{background:"#8b5cf6",color:"#fff",padding:"6px 14px",borderRadius:8,fontSize:12,fontWeight:700,textDecoration:"none"}}>▶ Subscribe</a>
