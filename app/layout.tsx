@@ -1,7 +1,9 @@
+import Script from 'next/script'
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import ChatBot from "@/components/ChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans text-lg",
@@ -61,6 +63,8 @@ export default function RootLayout({
           data-site="quicktechai.app"
           strategy="lazyOnload"
         />
+        <ChatBot />
+            <Script async src="http://31.97.56.148:3100/script.js" data-website-id="8dbfb240-466c-4e16-bd4b-a847141be237" strategy="afterInteractive" />
       </body>
     </html>
   );
