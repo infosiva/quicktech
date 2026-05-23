@@ -70,64 +70,14 @@ export default function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ background: "#080712", color: "#f0eeff" }}
+        style={{ background: "#07080f", color: "#f0f4ff" }}
       >
-        {/* Animated mesh background blobs */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 0,
-            pointerEvents: "none",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            className="mesh-blob1"
-            style={{
-              position: "absolute",
-              top: "-10%",
-              left: "-5%",
-              width: 600,
-              height: 600,
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
-          />
-          <div
-            className="mesh-blob2"
-            style={{
-              position: "absolute",
-              top: "40%",
-              right: "-10%",
-              width: 500,
-              height: 500,
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(217,70,239,0.12) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
-          />
-          <div
-            className="mesh-blob3"
-            style={{
-              position: "absolute",
-              bottom: "-5%",
-              left: "30%",
-              width: 400,
-              height: 400,
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
-          />
-        </div>
+        <div className="aurora aurora-primary" aria-hidden />
+        <div className="aurora aurora-secondary" aria-hidden />
+        <div className="aurora aurora-third" aria-hidden />
+        <div className="grain" aria-hidden />
 
-        <div style={{ position: "relative", zIndex: 1 }}>
+        <div style={{ position: "relative", zIndex: 2 }}>
           <Navbar />
           {children}
         </div>
