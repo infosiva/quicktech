@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ChatBot from "@/components/ChatBot";
+import { getSiteFlags } from "@/lib/flags";
 import Navbar from "@/components/Navbar";
 import SchemaOrg from "@/components/SchemaOrg";
 
@@ -58,11 +59,12 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const flags = await getSiteFlags('quicktech')
   return (
     <html lang="en">
       <head>
@@ -106,7 +108,7 @@ export default function RootLayout({
           data-website-id="8dbfb240-466c-4e16-bd4b-a847141be237"
           strategy="afterInteractive"
         />
-        <ChatBot />
+        {flags.chatbot && <ChatBot />}
         <CookieConsent />
       </body>
     </html>
