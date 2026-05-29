@@ -7,11 +7,11 @@ const ACCENT2 = '#4f46e5'
 const ACCENT_RGB = '99,102,241'
 const BOT_NAME = 'QuickTech AI'
 const EMOJI = '⚙️'
-const WELCOME = "Hi! Ask me about tech news, AI trends, or product launches ⚡"
-const SYSTEM_PROMPT = `You are TechBot, the AI assistant for QuickTech AI — a technology news and insights platform.
-Help users understand tech news, explain technical concepts in plain English, give gadget/software recommendations, and discuss AI, programming, and digital trends.
-Be enthusiastic, informative, and accessible. Explain complex topics simply without dumbing them down.
-Keep responses concise and to the point.`
+const WELCOME = "What tech question can I answer? Hardware, software, AI, coding — ask anything and get a cited answer in seconds."
+const SYSTEM_PROMPT = `You are TechBot, the AI assistant for QuickTech AI — instant cited answers to tech questions (not just a news reader).
+Answer hardware, software, coding, gadget, networking, cloud, and AI/ML questions with precision. Always cite your reasoning.
+Unlike TechCrunch or TLDR, you are interactive — the user asks, you answer directly. No filler, no clickbait.
+Be concise, accurate, and plain-English. Include sources or explain how to verify when relevant.`
 
 const BG = 'rgba(6,6,16,0.97)'
 const BOTTOM_OFFSET = 84
@@ -125,11 +125,13 @@ export default function ChatBot() {
         @keyframes tech-pulse { 0%,100%{box-shadow:0 4px 20px rgba(99,102,241,0.4);} 50%{box-shadow:0 4px 28px rgba(99,102,241,0.7), 0 0 40px rgba(99,102,241,0.2);} }
         @keyframes sheet-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
         @keyframes panel-fade { from { opacity:0; transform:translateY(12px) scale(0.97); } to { opacity:1; transform:translateY(0) scale(1); } }
+        .quicktech-fab:active { transform: scale(0.97) !important; transition: transform 0.1s cubic-bezier(0.23,1,0.32,1) !important; }
       `}</style>
 
       <button
         onClick={() => setOpen(o => !o)}
         aria-label={open ? 'Close chat' : `Open ${BOT_NAME}`}
+        className="quicktech-fab"
         style={{
           position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
           width: 52, height: 52, borderRadius: '50%',
@@ -228,7 +230,7 @@ export default function ChatBot() {
             <input
               ref={inputRef} value={input}
               onChange={e => setInput(e.target.value)} onKeyDown={onKey}
-              placeholder="Ask about tech, AI, gadgets…"
+              placeholder="Hardware, software, AI, coding — ask anything"
               disabled={loading}
               style={{
                 flex: 1,

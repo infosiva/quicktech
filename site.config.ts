@@ -40,8 +40,8 @@ export const siteConfig: SiteConfig = {
   themeColor: 'violet',
 
   heroBadge:    'quicktech · AI tech answers · instant',
-  headline:     ['Tech answers,', 'in seconds.'],
-  subheadline:  'Ask any tech question — hardware, software, coding, gadgets. AI answers instantly with sources.',
+  headline:     ['Tech answers,', 'not tech articles.'],
+  subheadline:  'Ask any hardware, software, or AI question — get a cited answer in seconds, not a list of links to skim.',
   ctaPrimary:   { text: '⚡ Ask a Question →', href: '#ask' },
   ctaSecondary: { text: '📰 Tech News',        href: '#news' },
 
@@ -116,9 +116,9 @@ export const siteConfig: SiteConfig = {
   ],
 
   chatbot: {
-    welcomeMessage: 'Hi! What tech question can I answer for you?',
+    welcomeMessage: 'What tech question can I answer? Hardware, software, AI, coding — ask anything and get a cited answer in seconds.',
     botName:        'TechBot',
-    placeholder:    'Ask any tech question…',
+    placeholder:    'Hardware, software, AI, coding — ask anything',
   },
 }
 
