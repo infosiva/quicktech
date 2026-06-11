@@ -1,3 +1,4 @@
+import { reportToTaskFlow } from '@/lib/reportToTaskFlow'
 import Groq from 'groq-sdk'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -37,6 +38,7 @@ Keep responses concise and to the point.`
       stream: true,
     })
 
+    void reportToTaskFlow({ project: 'quicktech', agentName: 'ChatBot', status: 'completed', message: 'Chat message processed' })
     const readable = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder()
