@@ -1,5 +1,5 @@
 'use client'
-// components/FeaturesGrid.tsx — bento layout, whileInView stagger, blur-in
+// components/FeaturesGrid.tsx — bento layout, white bg, blue accent
 import { motion } from 'framer-motion'
 import { siteConfig } from '@/site.config'
 import { FADE_UP, STAGGER_CONTAINER, CARD_HOVER, SPRING_CINEMATIC, useMotionVariants } from '@/lib/motion'
@@ -9,10 +9,14 @@ export default function FeaturesGrid() {
   const itemVars      = useMotionVariants(FADE_UP)
 
   return (
-    <section id="features" className="py-14 px-4 sm:px-6 max-w-5xl mx-auto border-t border-white/[0.05]">
+    <section
+      id="features"
+      className="py-14 px-4 sm:px-6 max-w-5xl mx-auto"
+      style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}
+    >
       <div className="text-center mb-10">
-        <h2 className="text-2xl font-black text-white mb-2">Everything you need</h2>
-        <p className="text-white/40 text-sm">AI-powered, free, covers every tech topic</p>
+        <h2 className="text-2xl font-black text-gray-900 mb-2">Everything you need</h2>
+        <p className="text-gray-400 text-sm">AI-powered repair management, zero spreadsheets</p>
       </div>
 
       <motion.div
@@ -31,14 +35,15 @@ export default function FeaturesGrid() {
               variants={itemVars as Parameters<typeof motion.div>[0]['variants']}
               {...CARD_HOVER}
               transition={SPRING_CINEMATIC}
-              className={`rounded-2xl border border-white/[0.07] bg-white/[0.03] p-6 flex flex-col gap-3 cursor-default select-none
+              className={`rounded-2xl bg-white p-6 flex flex-col gap-3 cursor-default select-none
                 ${isLarge ? 'md:col-span-1 md:row-span-2' : ''}
                 ${isWide  ? 'sm:col-span-2 md:col-span-2' : ''}
               `}
+              style={{ border: '1px solid rgba(37,99,235,0.10)', boxShadow: '0 2px 12px rgba(37,99,235,0.06)' }}
             >
               <span className={`${isLarge ? 'text-4xl' : 'text-3xl'}`}>{f.icon}</span>
-              <div className={`font-bold text-white ${isLarge ? 'text-lg' : 'text-sm'}`}>{f.title}</div>
-              <div className={`text-white/45 leading-relaxed ${isLarge ? 'text-sm' : 'text-xs'}`}>{f.desc}</div>
+              <div className={`font-bold text-gray-900 ${isLarge ? 'text-lg' : 'text-sm'}`}>{f.title}</div>
+              <div className={`text-gray-500 leading-relaxed ${isLarge ? 'text-sm' : 'text-xs'}`}>{f.desc}</div>
             </motion.div>
           )
         })}

@@ -20,41 +20,41 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://quicktechai.app"),
-  title: "QuickTech AI — Instant AI Answers to Tech Questions",
+  title: "QuickTech — AI Device Repair Management for Tech Shops",
   description:
-    "Ask any tech question and get instant AI answers with sources. Hardware, software, coding, gadgets, AI/ML — covered in seconds. Free forever.",
+    "AI-powered repair ticket routing, diagnostics, and customer updates for device repair shops. No spreadsheets, no missed jobs. Free trial.",
   keywords: [
-    "tech questions AI",
-    "AI tech answers",
-    "hardware advice AI",
-    "coding help AI",
-    "best GPU",
-    "tech news AI",
-    "QuickTech AI",
+    "device repair management software",
+    "repair shop ticketing system",
+    "AI repair ticket routing",
+    "phone repair shop software",
+    "repair shop management",
+    "device repair SaaS",
+    "QuickTech repair",
   ],
-  authors: [{ name: "QuickTech AI" }],
+  authors: [{ name: "QuickTech" }],
   openGraph: {
     type: "website",
     url: "https://quicktechai.app",
-    siteName: "QuickTech AI",
-    title: "QuickTech AI — Instant AI Answers to Tech Questions",
+    siteName: "QuickTech",
+    title: "QuickTech — AI Device Repair Management for Tech Shops",
     description:
-      "Ask any tech question — hardware, software, coding, gadgets. AI answers instantly with sources. Free forever.",
+      "AI-powered repair ticket routing, diagnostics, and customer updates. Built for device repair shops. Free trial.",
     images: [
       {
         url: "https://quicktechai.app/og-quicktech.png",
         width: 1200,
         height: 630,
-        alt: "QuickTech AI — Instant Tech Answers",
+        alt: "QuickTech — AI Device Repair Management",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@QuickTechAIPro",
-    title: "QuickTech AI — Instant AI Answers to Tech Questions",
+    title: "QuickTech — AI Device Repair Management for Tech Shops",
     description:
-      "Ask any tech question. AI answers instantly with sources. Free forever.",
+      "AI repair ticket routing, diagnostics, and customer updates. Free trial for repair shops.",
   },
   robots: "index, follow",
 };
@@ -72,11 +72,10 @@ export default async function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ background: "#07080f", color: "#f0f4ff" }}
+        style={{ background: "#f9fafb", color: "#111827" }}
       >
         <div className="aurora aurora-primary" aria-hidden />
         <div className="aurora aurora-secondary" aria-hidden />
-        <div className="aurora aurora-third" aria-hidden />
         <div className="grain" aria-hidden />
 
         <div style={{ position: "relative", zIndex: 2 }}>

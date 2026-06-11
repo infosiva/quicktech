@@ -6,13 +6,18 @@ export default function MarqueeBar() {
   const items = [...siteConfig.socialProof.marqueeItems, ...siteConfig.socialProof.marqueeItems]
 
   return (
-    <section aria-label="Tech topics covered" className="py-6 border-y border-white/[0.06] overflow-hidden">
+    <section
+      aria-label="Device types covered"
+      className="py-5 overflow-hidden"
+      style={{ borderTop: '1px solid rgba(37,99,235,0.08)', borderBottom: '1px solid rgba(37,99,235,0.08)', background: 'rgba(37,99,235,0.03)' }}
+    >
       <div className="marquee-wrapper">
         <div className="marquee-track gap-8">
           {items.map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-2 text-sm text-white/40 font-medium whitespace-nowrap select-none px-3"
+              className="flex items-center gap-2 text-sm font-medium whitespace-nowrap select-none px-3"
+              style={{ color: 'rgba(17,24,39,0.45)' }}
             >
               {item}
             </span>

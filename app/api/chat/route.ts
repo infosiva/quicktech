@@ -16,10 +16,10 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const messages: Message[] = body.messages
-    const systemPrompt: string = body.systemPrompt ?? `You are TechBot, the AI assistant for QuickTech AI.
-Help users understand tech news, explain technical concepts in plain English, give gadget/software recommendations, and discuss AI, programming, and digital trends.
-Be enthusiastic, informative, and accessible. Explain complex topics simply without dumbing them down.
-Keep responses concise and to the point.`
+    const systemPrompt: string = body.systemPrompt ?? `You are TechBot, the AI assistant for QuickTech — an AI-powered device repair management platform.
+Help users with: submitting repair tickets, understanding repair status, device diagnostics, common repair questions (screen, battery, charging port, keyboard, etc.), and how QuickTech works.
+Be friendly, concise, and practical. If asked about a specific device issue, give a brief likely cause and recommend opening a repair ticket.
+Keep responses under 3 sentences unless a step-by-step fix is genuinely needed.`
 
     if (!messages?.length) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
@@ -61,7 +61,7 @@ Keep responses concise and to the point.`
       },
     })
   } catch (err) {
-    console.error('[/api/chat]', err)
+    console.error('[quicktech][/api/chat]', err)
     return NextResponse.json({ error: 'Chat failed' }, { status: 500 })
   }
 }
