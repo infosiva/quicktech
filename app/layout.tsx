@@ -7,6 +7,7 @@ import ChatBot from "@/components/ChatBot";
 import { getSiteFlags } from "@/lib/flags";
 import Navbar from "@/components/Navbar";
 import SchemaOrg from "@/components/SchemaOrg";
+import { ThemeLoader } from "@/lib/theme-loader-client";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ background: "#f9fafb", color: "#111827" }}
       >
+        <ThemeLoader />
         <div className="aurora aurora-primary" aria-hidden />
         <div className="aurora aurora-secondary" aria-hidden />
         <div className="grain" aria-hidden />
