@@ -16,8 +16,8 @@ export default function NewsletterSignup() {
     <section
       className="my-10 rounded-2xl p-8 text-center"
       style={{
-        border: '1px solid rgba(37,99,235,0.12)',
-        background: 'rgba(37,99,235,0.04)',
+        border: '1px solid rgba(217,119,6,0.12)',
+        background: 'rgba(217,119,6,0.04)',
       }}
     >
       <h3 className="mb-2 text-xl font-bold text-gray-900">Get weekly tech tips</h3>
@@ -38,7 +38,7 @@ export default function NewsletterSignup() {
           <button
             type="submit"
             className="btn-press rounded-lg px-6 py-2 text-sm font-bold text-white transition-colors duration-150"
-            style={{ background: '#2563eb' }}
+            style={{ background: '#d97706' }}
           >
             Subscribe Free
           </button>

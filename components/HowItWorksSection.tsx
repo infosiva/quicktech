@@ -12,7 +12,7 @@ export default function HowItWorksSection() {
     <section
       id="how-it-works"
       className="py-14 px-4 sm:px-6 max-w-5xl mx-auto"
-      style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}
+      style={{ borderTop: '1px solid rgba(217,119,6,0.08)' }}
     >
       <motion.div
         variants={containerVars as Parameters<typeof motion.div>[0]['variants']}
@@ -29,7 +29,7 @@ export default function HowItWorksSection() {
           {/* Connecting line — desktop only */}
           <div
             className="hidden md:block absolute top-8 left-1/3 right-1/3 h-px"
-            style={{ background: 'rgba(37,99,235,0.12)' }}
+            style={{ background: 'rgba(217,119,6,0.12)' }}
             aria-hidden="true"
           />
 
@@ -37,13 +37,13 @@ export default function HowItWorksSection() {
             <motion.div key={step.step} variants={itemVars as Parameters<typeof motion.div>[0]['variants']} className="flex flex-col items-center text-center gap-3">
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-                style={{ background: 'rgba(37,99,235,0.07)', border: '1px solid rgba(37,99,235,0.14)' }}
+                style={{ background: 'rgba(217,119,6,0.07)', border: '1px solid rgba(217,119,6,0.14)' }}
               >
                 {step.icon}
               </div>
               <div
                 className="text-3xl font-black tabular-nums leading-none"
-                style={{ color: 'rgba(37,99,235,0.15)' }}
+                style={{ color: 'rgba(217,119,6,0.15)' }}
               >
                 {String(step.step).padStart(2, '0')}
               </div>

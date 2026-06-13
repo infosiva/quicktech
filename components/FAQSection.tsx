@@ -9,7 +9,7 @@ export default function FAQSection() {
     <section
       id="faq"
       className="py-14 px-4 sm:px-6 max-w-3xl mx-auto"
-      style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}
+      style={{ borderTop: '1px solid rgba(217,119,6,0.08)' }}
     >
       <div className="text-center mb-8">
         <h2 className="text-2xl font-black text-gray-900 mb-2">Frequently asked questions</h2>
@@ -22,7 +22,7 @@ export default function FAQSection() {
             key={i}
             value={String(i)}
             className="rounded-xl overflow-hidden"
-            style={{ border: '1px solid rgba(37,99,235,0.10)', background: '#ffffff' }}
+            style={{ border: '1px solid rgba(217,119,6,0.10)', background: '#ffffff' }}
           >
             <Accordion.Trigger
               className="w-full flex items-center justify-between px-5 py-4 text-left text-sm font-semibold text-gray-700 hover:text-gray-900 transition-colors group"
@@ -31,7 +31,7 @@ export default function FAQSection() {
               <ChevronDown
                 size={16}
                 className="shrink-0 ml-3 transition-transform duration-200 group-data-[state=open]:rotate-180"
-                style={{ color: '#2563eb' }}
+                style={{ color: '#d97706' }}
               />
             </Accordion.Trigger>
             <Accordion.Content

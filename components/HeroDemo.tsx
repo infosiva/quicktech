@@ -63,8 +63,8 @@ const STATUS_CONFIG: Record<TicketStatus, { label: string; color: string; bg: st
   },
   'in-progress': {
     label: 'In Progress',
-    color: '#2563eb',
-    bg: 'rgba(37,99,235,0.10)',
+    color: '#d97706',
+    bg: 'rgba(217,119,6,0.10)',
     icon: <Clock size={11} />,
   },
   'done': {
@@ -103,14 +103,14 @@ export default function HeroDemo() {
   return (
     <div
       className="rounded-2xl border bg-white shadow-lg p-5 flex flex-col gap-4"
-      style={{ borderColor: 'rgba(37,99,235,0.12)', minHeight: 300 }}
+      style={{ borderColor: 'rgba(217,119,6,0.12)', minHeight: 300 }}
     >
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div
             className="w-7 h-7 rounded-lg flex items-center justify-center"
-            style={{ background: '#2563eb' }}
+            style={{ background: '#d97706' }}
           >
             <Wrench size={14} color="#fff" strokeWidth={2.5} />
           </div>
@@ -129,13 +129,13 @@ export default function HeroDemo() {
       <div className="grid grid-cols-3 gap-2">
         {[
           { label: 'Open', val: ALL_TICKETS.filter(t => t.status === 'open').length, color: '#d97706' },
-          { label: 'In Progress', val: inProgressCount, color: '#2563eb' },
+          { label: 'In Progress', val: inProgressCount, color: '#d97706' },
           { label: 'Done Today', val: doneCount, color: '#059669' },
         ].map(s => (
           <div
             key={s.label}
             className="rounded-xl p-2.5 text-center"
-            style={{ background: 'rgba(37,99,235,0.04)', border: '1px solid rgba(37,99,235,0.08)' }}
+            style={{ background: 'rgba(217,119,6,0.04)', border: '1px solid rgba(217,119,6,0.08)' }}
           >
             <div className="text-lg font-black" style={{ color: s.color }}>{s.val}</div>
             <div className="text-[9px] text-gray-400 font-medium leading-tight">{s.label}</div>
@@ -154,8 +154,8 @@ export default function HeroDemo() {
               key={ticket.id + pos}
               className="ticket-enter rounded-xl px-3.5 py-3 flex items-center gap-3 transition-all duration-300"
               style={{
-                background: isActive ? 'rgba(37,99,235,0.06)' : '#fff',
-                border: `1px solid ${isActive ? 'rgba(37,99,235,0.22)' : 'rgba(37,99,235,0.08)'}`,
+                background: isActive ? 'rgba(217,119,6,0.06)' : '#fff',
+                border: `1px solid ${isActive ? 'rgba(217,119,6,0.22)' : 'rgba(217,119,6,0.08)'}`,
                 transform: isActive ? 'scale(1.01)' : 'scale(1)',
               }}
             >

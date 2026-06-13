@@ -16,7 +16,7 @@ function SetupAndHeatmap() {
   return (
     <>
       {/* 3 steps to live */}
-      <section className="py-8 px-4 sm:px-6 max-w-5xl mx-auto" style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}>
+      <section className="py-8 px-4 sm:px-6 max-w-5xl mx-auto" style={{ borderTop: '1px solid rgba(217,119,6,0.08)' }}>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 flex-wrap">
           <span className="text-sm font-bold text-slate-500 mr-2">Up and running in 3 steps →</span>
           {[
@@ -24,8 +24,8 @@ function SetupAndHeatmap() {
             { n: '2', label: 'Invite your techs' },
             { n: '3', label: 'Start taking tickets' },
           ].map((s) => (
-            <div key={s.n} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-slate-600" style={{ border: '1px solid rgba(37,99,235,0.14)', background: 'rgba(37,99,235,0.05)' }}>
-              <span className="w-5 h-5 rounded-full text-blue-700 text-xs font-bold flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(37,99,235,0.15)' }}>{s.n}</span>
+            <div key={s.n} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm text-slate-600" style={{ border: '1px solid rgba(217,119,6,0.14)', background: 'rgba(217,119,6,0.05)' }}>
+              <span className="w-5 h-5 rounded-full text-amber-700 text-xs font-bold flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(217,119,6,0.15)' }}>{s.n}</span>
               {s.label}
             </div>
           ))}
@@ -34,17 +34,17 @@ function SetupAndHeatmap() {
 
       {/* Repair issue heatmap teaser */}
       <section className="py-8 px-4 sm:px-6 max-w-5xl mx-auto">
-        <div className="rounded-2xl p-6 bg-white shadow-sm" style={{ border: '1px solid rgba(37,99,235,0.10)' }}>
+        <div className="rounded-2xl p-6 bg-white shadow-sm" style={{ border: '1px solid rgba(217,119,6,0.10)' }}>
           <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
             <div>
               <h3 className="text-slate-800 font-bold text-base mb-0.5">Issue Frequency Breakdown</h3>
               <p className="text-slate-400 text-xs">Most common repair types across your shop — so you always have the right parts stocked</p>
             </div>
-            <span className="text-[10px] font-bold px-3 py-1 rounded-full" style={{ border: '1px solid rgba(37,99,235,0.18)', color: '#2563eb', background: 'rgba(37,99,235,0.07)' }}>Pro feature</span>
+            <span className="text-[10px] font-bold px-3 py-1 rounded-full" style={{ border: '1px solid rgba(217,119,6,0.18)', color: '#d97706', background: 'rgba(217,119,6,0.07)' }}>Pro feature</span>
           </div>
           <div className="flex flex-col gap-3">
             {[
-              { label: 'Screen & display repairs', pct: 68, color: 'rgba(37,99,235,0.70)'  },
+              { label: 'Screen & display repairs', pct: 68, color: 'rgba(217,119,6,0.70)'  },
               { label: 'Battery replacements',     pct: 51, color: 'rgba(5,150,105,0.70)'  },
               { label: 'Charging port issues',     pct: 33, color: 'rgba(245,158,11,0.70)' },
             ].map((row) => (

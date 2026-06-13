@@ -14,8 +14,8 @@ export default function Navbar() {
         background: 'rgba(249,250,251,0.85)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: '1px solid rgba(37,99,235,0.10)',
-        boxShadow: '0 1px 12px rgba(37,99,235,0.06)',
+        borderBottom: '1px solid rgba(217,119,6,0.10)',
+        boxShadow: '0 1px 12px rgba(217,119,6,0.06)',
       }}
     >
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
@@ -23,12 +23,12 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2.5">
           <span
             className="flex items-center justify-center w-8 h-8 rounded-lg"
-            style={{ background: '#2563eb' }}
+            style={{ background: '#d97706' }}
           >
             <Wrench size={16} color="#fff" strokeWidth={2.5} />
           </span>
           <span className="font-black text-lg tracking-tight text-gray-900">
-            Quick<span style={{ color: '#2563eb' }}>Tech</span>
+            Quick<span style={{ color: '#d97706' }}>Tech</span>
           </span>
         </Link>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
           <Link
             href="#ask"
             className="btn-press px-4 py-2 rounded-lg text-sm font-bold text-white transition-colors duration-150"
-            style={{ background: '#2563eb' }}
+            style={{ background: '#d97706' }}
           >
             Get Started
           </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
           <Link
             href="#ask"
             className="btn-press mt-1 text-center py-2.5 rounded-lg font-bold text-white"
-            style={{ background: '#2563eb' }}
+            style={{ background: '#d97706' }}
             onClick={() => setOpen(false)}
           >
             Get Started

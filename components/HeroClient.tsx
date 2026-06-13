@@ -22,9 +22,9 @@ export default function HeroClient() {
         <span
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
           style={{
-            background: 'rgba(37,99,235,0.08)',
-            color: '#1d4ed8',
-            border: '1px solid rgba(37,99,235,0.18)',
+            background: 'rgba(217,119,6,0.08)',
+            color: '#b45309',
+            border: '1px solid rgba(217,119,6,0.18)',
           }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -40,7 +40,7 @@ export default function HeroClient() {
         {siteConfig.headline.map((line, i) => (
           <span key={i} className="block">
             {i === 1
-              ? <span style={{ color: '#2563eb' }}>{line}</span>
+              ? <span style={{ color: '#d97706' }}>{line}</span>
               : line
             }
           </span>
@@ -65,9 +65,9 @@ export default function HeroClient() {
             key={pill}
             className="text-xs font-semibold px-3 py-1.5 rounded-full"
             style={{
-              background: 'rgba(37,99,235,0.06)',
-              color: '#1d4ed8',
-              border: '1px solid rgba(37,99,235,0.14)',
+              background: 'rgba(217,119,6,0.06)',
+              color: '#b45309',
+              border: '1px solid rgba(217,119,6,0.14)',
             }}
           >
             {pill}
@@ -85,7 +85,7 @@ export default function HeroClient() {
           <Link
             href={siteConfig.ctaPrimary.href}
             className="btn-press inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white"
-            style={{ background: '#2563eb', boxShadow: '0 4px 20px rgba(37,99,235,0.30)' }}
+            style={{ background: '#d97706', boxShadow: '0 4px 20px rgba(217,119,6,0.30)' }}
           >
             <Wrench size={16} strokeWidth={2.5} />
             {siteConfig.ctaPrimary.text}
@@ -96,9 +96,9 @@ export default function HeroClient() {
             href={siteConfig.ctaSecondary.href}
             className="btn-press inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold"
             style={{
-              color: '#2563eb',
-              background: 'rgba(37,99,235,0.06)',
-              border: '1px solid rgba(37,99,235,0.18)',
+              color: '#b45309',
+              background: 'rgba(217,119,6,0.06)',
+              border: '1px solid rgba(217,119,6,0.18)',
             }}
           >
             {siteConfig.ctaSecondary.text}

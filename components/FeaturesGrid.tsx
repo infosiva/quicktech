@@ -12,7 +12,7 @@ export default function FeaturesGrid() {
     <section
       id="features"
       className="py-14 px-4 sm:px-6 max-w-5xl mx-auto"
-      style={{ borderTop: '1px solid rgba(37,99,235,0.08)' }}
+      style={{ borderTop: '1px solid rgba(217,119,6,0.08)' }}
     >
       <div className="text-center mb-10">
         <h2 className="text-2xl font-black text-gray-900 mb-2">Everything you need</h2>
@@ -39,7 +39,7 @@ export default function FeaturesGrid() {
                 ${isLarge ? 'md:col-span-1 md:row-span-2' : ''}
                 ${isWide  ? 'sm:col-span-2 md:col-span-2' : ''}
               `}
-              style={{ border: '1px solid rgba(37,99,235,0.10)', boxShadow: '0 2px 12px rgba(37,99,235,0.06)' }}
+              style={{ border: '1px solid rgba(217,119,6,0.10)', boxShadow: '0 2px 12px rgba(217,119,6,0.06)' }}
             >
               <span className={`${isLarge ? 'text-4xl' : 'text-3xl'}`}>{f.icon}</span>
               <div className={`font-bold text-gray-900 ${isLarge ? 'text-lg' : 'text-sm'}`}>{f.title}</div>

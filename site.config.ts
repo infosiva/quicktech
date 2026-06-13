@@ -37,7 +37,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   siteName:   'QuickTech AI',
   domain:     'quicktechai.app',
-  themeColor: 'blue',
+  themeColor: 'amber',
 
   heroBadge:    'quicktech · device repair management · live in minutes',
   headline:     ['Device repair,', 'managed by AI.'],
