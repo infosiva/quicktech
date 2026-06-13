@@ -69,7 +69,20 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-adsense-account" content="ca-pub-4237294630161176" />
         <SchemaOrg />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: 'QuickTech',
+            url: 'https://quicktech.app',
+            description: 'AI-powered IT repair shop management — tickets, technicians, and customer comms in one place.',
+            applicationCategory: 'BusinessApplication',
+            offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP', description: 'Free plan available' },
+          })}}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
