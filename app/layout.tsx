@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ChatBot from "@/components/ChatBot";
+import FeedbackWidget from "@/components/FeedbackWidget";
 import { getSiteFlags } from "@/lib/flags";
 import Navbar from "@/components/Navbar";
 import SchemaOrg from "@/components/SchemaOrg";
@@ -123,6 +124,7 @@ export default async function RootLayout({
           strategy="afterInteractive"
         />
         {flags.chatbot && <ChatBot />}
+        <FeedbackWidget siteName="QuickTech" accentColor="#2563eb" accentColor2="#1d4ed8" position="left" />
         <CookieConsent />
       </body>
     </html>
