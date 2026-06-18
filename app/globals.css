@@ -3,12 +3,16 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 :root {
-  --bg:         #f5f5f5;
-  --bg-2:       #fef3c7;
-  --surface:    rgba(217,119,6,0.04);
-  --surface-2:  rgba(217,119,6,0.08);
-  --border:     rgba(217,119,6,0.12);
-  --border-2:   rgba(217,119,6,0.22);
+  --background: #ffffff;
+  --accent:     #2563eb;
+  --accent-2:   #1d4ed8;
+  --foreground: #111827;
+  --border:     rgba(37,99,235,0.14);
+  --bg:         #ffffff;
+  --bg-2:       #eff6ff;
+  --surface:    rgba(37,99,235,0.04);
+  --surface-2:  rgba(37,99,235,0.08);
+  --border-2:   rgba(37,99,235,0.22);
   --text:       #111827;
   --text-2:     rgba(17,24,39,0.65);
   --text-3:     rgba(17,24,39,0.40);
@@ -17,8 +21,6 @@
   --amber-dim:  rgba(217,119,6,0.12);
   --amber-glow: rgba(217,119,6,0.20);
   --ease:       cubic-bezier(0.23, 1, 0.32, 1);
-  --background: #f5f5f5;
-  --foreground: #111827;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
