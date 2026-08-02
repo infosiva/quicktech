@@ -3,8 +3,8 @@ export default function AffiliateBanner() {
     <div
       className="my-6 rounded-xl p-4 text-center text-sm"
       style={{
-        border: '1px solid rgba(217,119,6,0.14)',
-        background: 'rgba(217,119,6,0.04)',
+        border: '1px solid rgba(59,130,246,0.14)',
+        background: 'rgba(59,130,246,0.04)',
       }}
     >
       <p className="mb-2 font-semibold text-gray-700">
@@ -15,7 +15,7 @@ export default function AffiliateBanner() {
         target="_blank"
         rel="noopener noreferrer sponsored"
         className="btn-press inline-block rounded-lg px-4 py-2 text-xs font-bold text-white transition-colors duration-150"
-        style={{ background: '#d97706' }}
+        style={{ background: '#3b82f6' }}
       >
         Get Hostinger →
       </a>

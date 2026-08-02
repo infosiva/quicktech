@@ -55,7 +55,7 @@ export default function FinalCTA() {
   return (
     <section
       className="py-20 px-4 sm:px-6"
-      style={{ borderTop: '1px solid rgba(217,119,6,0.08)' }}
+      style={{ borderTop: '1px solid rgba(59,130,246,0.08)' }}
     >
       <motion.div
         variants={vars as Parameters<typeof motion.div>[0]['variants']}
@@ -73,7 +73,7 @@ export default function FinalCTA() {
           <Link
             href={siteConfig.finalCta.ctaHref}
             className="btn-press cta-pulse inline-flex items-center gap-2 px-10 py-4 rounded-xl text-base font-bold text-white"
-            style={{ background: '#d97706', boxShadow: '0 4px 24px rgba(217,119,6,0.30)' }}
+            style={{ background: '#3b82f6', boxShadow: '0 4px 24px rgba(59,130,246,0.30)' }}
           >
             <Wrench size={16} strokeWidth={2.5} />
             {siteConfig.finalCta.ctaText}
@@ -86,9 +86,9 @@ export default function FinalCTA() {
               key={pill}
               className="text-xs font-medium px-3 py-1 rounded-full"
               style={{
-                background: 'rgba(217,119,6,0.06)',
-                color: '#b45309',
-                border: '1px solid rgba(217,119,6,0.14)',
+                background: 'rgba(59,130,246,0.06)',
+                color: '#1d4ed8',
+                border: '1px solid rgba(59,130,246,0.14)',
               }}
             >
               {pill}
@@ -99,8 +99,8 @@ export default function FinalCTA() {
 
       {/* SaaS upgrade hook */}
       <section style={{
-        background: 'rgba(217,119,6,0.06)',
-        border: '1px solid rgba(217,119,6,0.15)',
+        background: 'rgba(59,130,246,0.06)',
+        border: '1px solid rgba(59,130,246,0.15)',
         borderRadius: 16, padding: '24px 28px',
         maxWidth: 700, margin: '48px auto 0',
         display: 'flex', flexWrap: 'wrap',
@@ -117,7 +117,7 @@ export default function FinalCTA() {
         <a href="/auth/signup" style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
           padding: '10px 20px', borderRadius: 10,
-          background: '#d97706', color: '#fff',
+          background: '#3b82f6', color: '#fff',
           fontWeight: 700, fontSize: 13, textDecoration: 'none',
         }}>
           Sign up free →

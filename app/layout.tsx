@@ -124,7 +124,7 @@ export default async function RootLayout({
           strategy="afterInteractive"
         />
         {flags.chatbot && <ChatBot />}
-        <FeedbackWidget siteName="QuickTech" accentColor="#2563eb" accentColor2="#1d4ed8" position="left" />
+        <FeedbackWidget siteName="QuickTech" accentColor="#3b82f6" accentColor2="#1d4ed8" position="left" />
         <CookieConsent />
       </body>
     </html>
