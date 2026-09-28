@@ -34,7 +34,7 @@ Keep responses under 3 sentences unless a step-by-step fix is genuinely needed.`
     ]
 
     const stream = await getGroq().chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-20b',
       messages: chatMessages,
       max_tokens: 600,
       temperature: 0.7,
