@@ -1,6 +1,7 @@
 'use client'
 // components/FinalCTA.tsx — bottom CTA, blue accent on white bg
 import { motion } from 'framer-motion'
+import { MagneticButton } from "@infosiva/shared-ui/modern";
 import { useState } from 'react'
 import { siteConfig } from '@/site.config'
 import { FADE_UP, BUTTON_PRESS, SPRING_CINEMATIC, useMotionVariants } from '@/lib/motion'
@@ -70,13 +71,14 @@ export default function FinalCTA() {
         <p className="text-gray-500 text-base">{siteConfig.finalCta.subtext}</p>
 
         <motion.div {...BUTTON_PRESS} transition={SPRING_CINEMATIC}>
-          <Link
-            href={siteConfig.finalCta.ctaHref}
-            className="btn-press cta-pulse inline-flex items-center gap-2 px-10 py-4 rounded-xl text-base font-bold text-white"
-            style={{ background: '#3b82f6', boxShadow: '0 4px 24px rgba(59,130,246,0.30)' }}
-          >
-            <Wrench size={16} strokeWidth={2.5} />
-            {siteConfig.finalCta.ctaText}
+          <Link href={siteConfig.finalCta.ctaHref}>
+            <MagneticButton
+              className="btn-press cta-pulse inline-flex items-center gap-2 px-10 py-4 rounded-xl text-base font-bold text-white"
+              style={{ background: '#3b82f6', boxShadow: '0 4px 24px rgba(59,130,246,0.30)' }}
+            >
+              <Wrench size={16} strokeWidth={2.5} />
+              {siteConfig.finalCta.ctaText}
+            </MagneticButton>
           </Link>
         </motion.div>
 

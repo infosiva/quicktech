@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import SchemaOrg from "@/components/SchemaOrg";
 import { ThemeLoader } from "@/lib/theme-loader-client";
 
+import { MotionProvider } from "@infosiva/shared-ui/modern";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -96,7 +97,7 @@ export default async function RootLayout({
 
         <div style={{ position: "relative", zIndex: 2 }}>
           <Navbar />
-          {children}
+          <MotionProvider>{children}</MotionProvider>
         </div>
 
         {/* Adsterra — instant approval */}
