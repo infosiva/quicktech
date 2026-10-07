@@ -22,9 +22,9 @@ export default function HeroClient() {
         <span
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest"
           style={{
-            background: 'rgba(59,130,246,0.08)',
-            color: '#1d4ed8',
-            border: '1px solid rgba(59,130,246,0.18)',
+            background: 'color-mix(in oklab, var(--accent) 8%, transparent)',
+            color: 'var(--accent-strong)',
+            border: '1px solid color-mix(in oklab, var(--accent) 18%, transparent)',
           }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -40,7 +40,7 @@ export default function HeroClient() {
         {siteConfig.headline.map((line, i) => (
           <span key={i} className="block">
             {i === 1
-              ? <span style={{ color: '#3b82f6' }}>{line}</span>
+              ? <span style={{ color: 'var(--accent)' }}>{line}</span>
               : line
             }
           </span>
@@ -65,9 +65,9 @@ export default function HeroClient() {
             key={pill}
             className="text-xs font-semibold px-3 py-1.5 rounded-full"
             style={{
-              background: 'rgba(59,130,246,0.06)',
-              color: '#1d4ed8',
-              border: '1px solid rgba(59,130,246,0.14)',
+              background: 'color-mix(in oklab, var(--accent) 6%, transparent)',
+              color: 'var(--accent-strong)',
+              border: '1px solid color-mix(in oklab, var(--accent) 14%, transparent)',
             }}
           >
             {pill}
@@ -85,7 +85,7 @@ export default function HeroClient() {
           <Link
             href={siteConfig.ctaPrimary.href}
             className="btn-press inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white"
-            style={{ background: '#3b82f6', boxShadow: '0 4px 20px rgba(59,130,246,0.30)' }}
+            style={{ background: 'var(--accent)', boxShadow: '0 4px 20px color-mix(in oklab, var(--accent) 30%, transparent)' }}
           >
             <Wrench size={16} strokeWidth={2.5} />
             {siteConfig.ctaPrimary.text}
@@ -96,9 +96,9 @@ export default function HeroClient() {
             href={siteConfig.ctaSecondary.href}
             className="btn-press inline-flex items-center gap-2 px-8 py-4 rounded-xl text-sm font-bold"
             style={{
-              color: '#1d4ed8',
-              background: 'rgba(59,130,246,0.06)',
-              border: '1px solid rgba(59,130,246,0.18)',
+              color: 'var(--accent-strong)',
+              background: 'color-mix(in oklab, var(--accent) 6%, transparent)',
+              border: '1px solid color-mix(in oklab, var(--accent) 18%, transparent)',
             }}
           >
             {siteConfig.ctaSecondary.text}

@@ -25,7 +25,7 @@ export default function HeroSection() {
         {!isCentered && (
           <div className="order-2 lg:pl-4 mt-6 lg:mt-0">
             <Suspense fallback={
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] h-56 animate-pulse" />
+              <div className="rounded-2xl border border-white/10 bg-[var(--surface)]/[0.02] h-56 animate-pulse" />
             }>
               <HeroDemo />
             </Suspense>

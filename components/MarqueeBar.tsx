@@ -9,7 +9,7 @@ export default function MarqueeBar() {
     <section
       aria-label="Device types covered"
       className="py-5 overflow-hidden"
-      style={{ borderTop: '1px solid rgba(59,130,246,0.08)', borderBottom: '1px solid rgba(59,130,246,0.08)', background: 'rgba(59,130,246,0.03)' }}
+      style={{ borderTop: '1px solid color-mix(in oklab, var(--accent) 8%, transparent)', borderBottom: '1px solid color-mix(in oklab, var(--accent) 8%, transparent)', background: 'color-mix(in oklab, var(--accent) 3%, transparent)' }}
     >
       <div className="marquee-wrapper">
         <div className="marquee-track gap-8">

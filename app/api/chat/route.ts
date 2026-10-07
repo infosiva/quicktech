@@ -1,10 +1,25 @@
 import { reportToTaskFlow } from '@/lib/reportToTaskFlow'
-import Groq from 'groq-sdk'
 import { NextRequest, NextResponse } from 'next/server'
 import { AI_LIMITER } from '@/lib/rateLimit'
 
-let _groq: Groq | null = null
-function getGroq() { if (!_groq) _groq = new Groq({ apiKey: process.env.GROQ_API_KEY! }); return _groq }
+const FALLBACK = "I'm having trouble right now. Open a repair ticket above and we'll follow up."
+
+// Free-first chain: Groq -> Gemini -> Cerebras. Tiers without a key are skipped; never throws.
+async function askChain(msgs: { role: string; content: string }[]): Promise<string> {
+  const oai = async (url: string, key: string | undefined, model: string) => {
+    if (!key) return ''
+    const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` }, body: JSON.stringify({ model, messages: msgs, max_tokens: 600, temperature: 0.7 }), signal: AbortSignal.timeout(12000) })
+    if (!r.ok) return ''
+    return (await r.json())?.choices?.[0]?.message?.content ?? ''
+  }
+  const tiers: Array<() => Promise<string>> = [
+    () => oai('https://api.groq.com/openai/v1/chat/completions', process.env.GROQ_API_KEY, 'llama-3.3-70b-versatile'),
+    () => oai('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', process.env.GEMINI_API_KEY, 'gemini-2.0-flash'),
+    () => oai('https://api.cerebras.ai/v1/chat/completions', process.env.CEREBRAS_API_KEY, 'llama-3.3-70b'),
+  ]
+  for (const t of tiers) { try { const o = await t(); if (o) return o } catch {} }
+  return FALLBACK
+}
 
 export const runtime = 'nodejs'
 
@@ -32,39 +47,11 @@ Keep responses under 3 sentences unless a step-by-step fix is genuinely needed.`
       { role: 'system', content: systemPrompt },
       ...messages.map((m: Message) => ({ role: m.role, content: m.content })),
     ]
-
-    const stream = await getGroq().chat.completions.create({
-      model: 'openai/gpt-oss-20b',
-      messages: chatMessages,
-      max_tokens: 600,
-      temperature: 0.7,
-      stream: true,
-    })
-
+    const text = await askChain(chatMessages)
     void reportToTaskFlow({ project: 'quicktech', agentName: 'ChatBot', status: 'completed', message: 'Chat message processed' })
-    const readable = new ReadableStream({
-      async start(controller) {
-        const encoder = new TextEncoder()
-        try {
-          for await (const chunk of stream) {
-            const text = chunk.choices[0]?.delta?.content ?? ''
-            if (text) controller.enqueue(encoder.encode(text))
-          }
-        } finally {
-          controller.close()
-        }
-      },
-    })
-
-    return new NextResponse(readable, {
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Transfer-Encoding': 'chunked',
-        'Cache-Control': 'no-cache',
-      },
-    })
+    return new NextResponse(text, { headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-cache' } })
   } catch (err) {
     console.error('[quicktech][/api/chat]', err)
-    return NextResponse.json({ error: 'Chat failed' }, { status: 500 })
+    return new NextResponse(FALLBACK, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
   }
 }

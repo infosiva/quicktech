@@ -56,7 +56,7 @@ export default function FinalCTA() {
   return (
     <section
       className="py-20 px-4 sm:px-6"
-      style={{ borderTop: '1px solid rgba(59,130,246,0.08)' }}
+      style={{ borderTop: '1px solid color-mix(in oklab, var(--accent) 8%, transparent)' }}
     >
       <motion.div
         variants={vars as Parameters<typeof motion.div>[0]['variants']}
@@ -74,7 +74,7 @@ export default function FinalCTA() {
           <Link href={siteConfig.finalCta.ctaHref}>
             <MagneticButton
               className="btn-press cta-pulse inline-flex items-center gap-2 px-10 py-4 rounded-xl text-base font-bold text-white"
-              style={{ background: '#3b82f6', boxShadow: '0 4px 24px rgba(59,130,246,0.30)' }}
+              style={{ background: 'var(--accent)', boxShadow: '0 4px 24px color-mix(in oklab, var(--accent) 30%, transparent)' }}
             >
               <Wrench size={16} strokeWidth={2.5} />
               {siteConfig.finalCta.ctaText}
@@ -88,9 +88,9 @@ export default function FinalCTA() {
               key={pill}
               className="text-xs font-medium px-3 py-1 rounded-full"
               style={{
-                background: 'rgba(59,130,246,0.06)',
-                color: '#1d4ed8',
-                border: '1px solid rgba(59,130,246,0.14)',
+                background: 'color-mix(in oklab, var(--accent) 6%, transparent)',
+                color: 'var(--accent-strong)',
+                border: '1px solid color-mix(in oklab, var(--accent) 14%, transparent)',
               }}
             >
               {pill}
@@ -101,8 +101,8 @@ export default function FinalCTA() {
 
       {/* SaaS upgrade hook */}
       <section style={{
-        background: 'rgba(59,130,246,0.06)',
-        border: '1px solid rgba(59,130,246,0.15)',
+        background: 'color-mix(in oklab, var(--accent) 6%, transparent)',
+        border: '1px solid color-mix(in oklab, var(--accent) 15%, transparent)',
         borderRadius: 16, padding: '24px 28px',
         maxWidth: 700, margin: '48px auto 0',
         display: 'flex', flexWrap: 'wrap',
@@ -119,7 +119,7 @@ export default function FinalCTA() {
         <a href="/auth/signup" style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
           padding: '10px 20px', borderRadius: 10,
-          background: '#3b82f6', color: '#fff',
+          background: 'var(--accent)', color: '#fff',
           fontWeight: 700, fontSize: 13, textDecoration: 'none',
         }}>
           Sign up free →

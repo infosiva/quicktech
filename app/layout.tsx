@@ -8,7 +8,10 @@ import FeedbackWidget from "@/components/FeedbackWidget";
 import { getSiteFlags } from "@/lib/flags";
 import Navbar from "@/components/Navbar";
 import SchemaOrg from "@/components/SchemaOrg";
-import { ThemeLoader } from "@/lib/theme-loader-client";
+import "./theme-vars.css";
+import { loadSiteTheme, buildThemeStyleTag, buildGa4Snippet, isValidGa4Id } from "@/lib/theme-loader";
+import { AnimatedBg } from "@/components/AnimatedBg";
+import { Telemetry } from "@/components/Telemetry";
 
 import { MotionProvider } from "@infosiva/shared-ui/modern";
 const geistSans = Geist({
@@ -62,16 +65,26 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
+const DEFAULT_ACCENT = '#fb7185'
+const DEFAULT_BG = '#0d1117'
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const flags = await getSiteFlags('quicktech')
+  const theme = await loadSiteTheme('quicktech')
+  const accent = theme?.primary ?? DEFAULT_ACCENT
+  const archetype = theme?.layout?.archetype ?? 'weekend-lifestyle'
+  const ga4Id = theme?.analytics?.ga4Id
+  const ga4 = buildGa4Snippet(theme)
   return (
-    <html lang="en">
+    <html lang="en" data-layout={archetype}>
       <head>
         <meta name="google-adsense-account" content="ca-pub-4237294630161176" />
+        <style dangerouslySetInnerHTML={{ __html: buildThemeStyleTag(theme, { background: DEFAULT_BG, primary: DEFAULT_ACCENT }) }} />
+        {ga4 && <script dangerouslySetInnerHTML={{ __html: ga4 }} />}
         <SchemaOrg />
         <script
           type="application/ld+json"
@@ -79,7 +92,7 @@ export default async function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'WebApplication',
             name: 'QuickTech',
-            url: 'https://quicktech.app',
+            url: 'https://quicktechai.app',
             description: 'AI-powered IT repair shop management — tickets, technicians, and customer comms in one place.',
             applicationCategory: 'BusinessApplication',
             offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP', description: 'Free plan available' },
@@ -88,12 +101,8 @@ export default async function RootLayout({
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ background: "#f9fafb", color: "#111827" }}
       >
-        <ThemeLoader />
-        <div className="aurora aurora-primary" aria-hidden />
-        <div className="aurora aurora-secondary" aria-hidden />
-        <div className="grain" aria-hidden />
+        <AnimatedBg theme={theme} fallback="mesh" />
 
         <div style={{ position: "relative", zIndex: 2 }}>
           <Navbar />
@@ -113,19 +122,10 @@ export default async function RootLayout({
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
-        <Script
-          src="http://31.97.56.148:3098/t.js"
-          data-site="quicktechai.app"
-          strategy="lazyOnload"
-        />
-        <Script
-          async
-          src="http://31.97.56.148:3100/script.js"
-          data-website-id="8dbfb240-466c-4e16-bd4b-a847141be237"
-          strategy="afterInteractive"
-        />
+        {isValidGa4Id(ga4Id) && <Script src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`} strategy="afterInteractive" />}
+        <Telemetry archetype={archetype} />
         {flags.chatbot && <ChatBot />}
-        <FeedbackWidget siteName="QuickTech" accentColor="#3b82f6" accentColor2="#1d4ed8" position="left" />
+        <FeedbackWidget siteName="QuickTech" accentColor={accent} accentColor2={accent} position="left" />
         <CookieConsent />
       </body>
     </html>

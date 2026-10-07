@@ -16,8 +16,8 @@ export default function NewsletterSignup() {
     <section
       className="my-10 rounded-2xl p-8 text-center"
       style={{
-        border: '1px solid rgba(59,130,246,0.12)',
-        background: 'rgba(59,130,246,0.04)',
+        border: '1px solid color-mix(in oklab, var(--accent) 12%, transparent)',
+        background: 'color-mix(in oklab, var(--accent) 4%, transparent)',
       }}
     >
       <h3 className="mb-2 text-xl font-bold text-gray-900">Get weekly tech tips</h3>
@@ -32,13 +32,13 @@ export default function NewsletterSignup() {
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full max-w-xs rounded-lg border border-blue-100 bg-white px-4 py-2 text-sm outline-none focus:border-blue-400 sm:w-auto"
+            className="w-full max-w-xs rounded-lg border border-blue-100 bg-[var(--surface)] px-4 py-2 text-sm outline-none focus:border-blue-400 sm:w-auto"
             style={{ transition: 'border-color 150ms' }}
           />
           <button
             type="submit"
             className="btn-press rounded-lg px-6 py-2 text-sm font-bold text-white transition-colors duration-150"
-            style={{ background: '#3b82f6' }}
+            style={{ background: 'var(--accent)' }}
           >
             Subscribe Free
           </button>
